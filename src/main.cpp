@@ -1,10 +1,11 @@
-#include <iostream>
-
 #include "main.hpp"
+#include <crequests.hpp>
+
+#include <iostream>
 
 // C Includes
 extern "C" {
-    #include "test/dpibypass.h"
+    
 }
 
 using namespace std;
@@ -77,14 +78,15 @@ int mainProgram() {
     if (DEBUG) cout << "Start of stage 2.1: Executing the main program..." << endl;
     #endif
     try{
-        mainC();
         
+            
         return SUCCESFULL_END_RESULT;
     }
     catch(exception& e) {
         cerr << e.what() << endl;
-        return WARNING_END_RESULT;
+        return WARNING_END_RESULT; 
     }
 }
+
 
 
